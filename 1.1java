@@ -1,0 +1,29 @@
+
+import java.lang.Math;
+import java.util.Scanner;
+public class labr1 {
+
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+
+        double x = 0; // вхідний параметр
+        double y = 0; // результат обчислення виразу
+        double A = 0; // проміжний результат - функціонально стала частина виразу
+        double B = 0; // проміжний результат - функціонально змінна частина виразу
+        System.out.print("x = ");
+		x = scan.nextDouble();
+        A = 2 * Math.abs(x - 5);
+        // спосіб 1: розгалуження в скороченій формі
+        if (x < -1)
+			B = ((Math.sin(x) * Math.sin(x)) / (1 + Math.abs(Math.cos(x))));
+		if (-1 <= x && x <= 1)
+			B = Math.cos(1 / Math.abs(x + 2)) * Math.cos(1 / Math.abs(x + 2));
+		if (x > 1)
+			B = Math.log(Math.abs(x + 2));
+
+        y = A - B;
+        System.out.println("");
+        System.out.println("1) y = " + String.format("%.2f", y));
+	}
+
+}
